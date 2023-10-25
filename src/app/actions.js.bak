@@ -1,0 +1,16 @@
+"use server"
+
+import {NextResponse} from "next/server"
+
+export async function createTodo(prevState, formData) {
+	try {
+		console.log("asdf")
+		// await createItem(formData.get('todo'))
+		return NextResponse({
+			message: formData,
+		})
+		return revalidatePath("/users")
+	} catch (e) {
+		return {message: "Failed to create"}
+	}
+}
